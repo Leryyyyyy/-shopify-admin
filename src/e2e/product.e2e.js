@@ -1,17 +1,4 @@
-const BASE_URL = `http://localhost:${process.env.PORT || 8000}`;
-const puppeteer = require('puppeteer');
 
-let browser;
-let page;
-
-beforeAll(async () => {
-  browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: { width: 1536, height: 780 },
-  });
-
-  page = await browser.newPage();
-});
 
 test(' open basicForm page', async () => {
   await page.goto(`${BASE_URL}/#/products/allProducts`);
@@ -41,7 +28,7 @@ test('商品查询', async () => {
   await page.click('button[type="submit"]');
   await page.waitFor(5 * 1000);
 
-  //筛选功能测试
+//筛选功能测试
 });
 
 // test ("产品添加", async()=>{
@@ -107,8 +94,8 @@ test('商品查询', async () => {
 //     }
 //     await page.click('#components-modal-demo-button-props>div>button:nth-child(1)')
 //     await page.goto(`${BASE_URL}/#/products/allProducts`)
-//     //功能未完善 需要切到别的页面在切回来修改的才会刷新
-// });
+    //功能未完善 需要切到别的页面在切回来修改的才会刷新
+//});
 // test('产品删除',async ()=>{
 //         await page.waitForSelector('.ant-table-row');
 //         for(let i=4;i<8;i++){
