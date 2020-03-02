@@ -1,7 +1,7 @@
 // ps https://github.com/GoogleChrome/puppeteer/issues/3120
 module.exports = {
   launch: {
-    headless:true,
+    headless:false,
     slowMo: process.env.SLOWMO ? process.env.SLOWMO : 0,
         devtools: true,
     args: [
